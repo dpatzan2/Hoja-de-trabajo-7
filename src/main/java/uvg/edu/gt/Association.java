@@ -5,10 +5,9 @@ package uvg.edu.gt;
  * @param <K> Tipo de la clave.
  * @param <V> Tipo del valor.
  */
-public class Association<K, V> {
+public class Association<K extends Comparable<K>, V> implements Comparable<Association<K, V>> {
     private K key;
     private V value;
-
 
     /**
      * Constructor de la clase Association.
@@ -34,5 +33,23 @@ public class Association<K, V> {
      */
     public V getValue() {
         return value;
+    }
+
+    /**
+     * Método para comparar esta asociación con otra basada en las claves.
+     * @param other La otra asociación a comparar.
+     * @return Un valor negativo si esta asociación es menor, un valor positivo si es mayor, o cero si son iguales.
+     */
+    @Override
+    public int compareTo(Association<K, V> other) {
+        if (this.key == null && other.key == null) {
+            return 0;
+        } else if (this.key == null) {
+            return -1;
+        } else if (other.key == null) {
+            return 1;
+        } else {
+            return this.key.compareTo(other.getKey());
+        }
     }
 }

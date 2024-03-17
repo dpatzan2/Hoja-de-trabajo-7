@@ -5,7 +5,7 @@ package uvg.edu.gt;
  * @param <E> Tipo de dato que se almacenará en el árbol y que debe ser comparable.
  */
 public class BinaryTree<E extends Comparable<E>> {
-    Node<E> root;
+    public Node<E> root;
 
     /**
      * Constructor de la clase BinaryTree.

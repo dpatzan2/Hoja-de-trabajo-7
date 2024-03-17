@@ -79,6 +79,6 @@ public class App {
             }
         }
         scanner.close();
-        System.out.println(); // Agregar un salto de línea después de imprimir una línea traducida
+        System.out.println();
     }
 }
